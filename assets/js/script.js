@@ -6,7 +6,7 @@ var quizQuestion = [{ question: "Q1?", a: "answer1", b: "answer2", c: "answer3",
 { question: "Q3?", a: "answer1", b: "answer2", c: "answer3", d: "answer4", correct: "a" },
 { question: "Q4?", a: "answer1", b: "answer2", c: "answer3", d: "answer4", correct: "c" }];
 var currentQuestion = 0;
-
+var quizTimerLength = 90;
 // ? Create question container and apply style to the elements 
 
 // create question container
@@ -21,27 +21,25 @@ answerList.setAttribute("id", "button-list");
 // TODO give style to dive 
 // create list of buttons for each answer option and give class to all 
 var answer1 = document.createElement("button");
-answer1.className = "answer-button"
-answer1.setAttribute("data-answer", "a")
+answer1.className = "answer-button";
+answer1.setAttribute("data-answer", "a");
 
 var answer2 = document.createElement("button");
-answer2.className = "answer-button"
-answer2.setAttribute("data-answer", "b")
+answer2.className = "answer-button";
+answer2.setAttribute("data-answer", "b");
 
 var answer3 = document.createElement("button");
-answer3.className = "answer-button"
-answer3.setAttribute("data-answer", "c")
+answer3.className = "answer-button";
+answer3.setAttribute("data-answer", "c");
 
 var answer4 = document.createElement("button");
-answer4.className = "answer-button"
-answer4.setAttribute("data-answer", "d")
-
-
-
+answer4.className = "answer-button";
+answer4.setAttribute("data-answer", "d");
 // TODO add style to question buttons also add types
 // create space for answer return
 var resultArea = document.createElement("h3");
 // TODO add style
+
 
 // In this order create question area 
 //  answers => answer list 
@@ -57,6 +55,12 @@ questionContainer.appendChild(answerList);
 questionContainer.appendChild(resultArea);
 
 
+var quizTimer = function () {
+    setInterval(function () {
+        quizTimerLength--;
+        document.querySelector("#timer-area").textContent = quizTimerLength;
+    }, 1000);
+}
 
 var rightAnswer = function () {
     var userAnswer = this.getAttribute("data-answer")
@@ -67,7 +71,7 @@ var rightAnswer = function () {
     } else {
         alert("no");
     }
-    
+
     if (currentQuestion === quizQuestion.length - 1) {
         alert("end of quiz")
 
@@ -78,6 +82,7 @@ var rightAnswer = function () {
 }
 
 var promptQuestions = function () {
+    quizTimer()
 
     questionEl.textContent = quizQuestion[currentQuestion].question;
     answer1.textContent = quizQuestion[currentQuestion].a;
