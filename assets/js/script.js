@@ -50,8 +50,6 @@ answerList.appendChild(answer4);
 questionContainer.appendChild(questionEl);
 // answer list in container
 questionContainer.appendChild(answerList);
-// result in container
-questionContainer.appendChild(resultArea);
 // ? END OF QUESTION CONTAINER CREATION
 
 
@@ -61,7 +59,6 @@ function quizTimer() {
     timer = setInterval(function () {
         quizTimerLength--;
         document.querySelector("#timer-area").textContent = quizTimerLength;
-
         if (quizTimerLength < 30) {
             document.getElementById("timer-area").style.color = "red";
         }
@@ -82,7 +79,7 @@ function quizTimer() {
 // ? END GAME FUNCTION
 function endGame() {
     questionContainer.remove();
-    clearInterval(timer)
+    clearInterval(timer);
     // create form elements to submit score and give style 
     var scoreContainer = document.createElement("div");
     var scoreTitle = document.createElement("h2");
@@ -107,7 +104,19 @@ function endGame() {
     scoreContainer.appendChild(scoreForm);
     // put on screen
     quizArea.appendChild(scoreContainer);
+
+    scoreForm.addEventListener("submit", saveScores );
 }
+
+// ? SAVE SCORES TO LOCAL STORAGE
+function saveScores() {
+
+    var savedScores = localStorage.setItem("score", quizTimerLength);
+    var savedNames = loacalStorage.setItem("Whovian", document.getElementById("user-name").value);
+    
+
+}
+
 
 // ? ANSWER FUNCTION
 function rightAnswer() {
