@@ -7,13 +7,14 @@ var quizQuestion = [{ question: "Q1?", a: "answer1", b: "answer2", c: "answer3",
 { question: "Q4?", a: "answer1", b: "answer2", c: "answer3", d: "answer4", correct: "c" }];
 var currentQuestion = 0;
 var quizTimerLength = 35;
+var hsList = [];
 
 
 
 // ? Create question container and apply style to the elements 
 // create question container
 var questionContainer = document.createElement("div");
-// TODO give style to container
+questionContainer.className = "q-area";
 // create question element
 var questionEl = document.createElement("h2");
 //  TODO give style to h2
@@ -105,15 +106,16 @@ function endGame() {
     // put on screen
     quizArea.appendChild(scoreContainer);
 
-    scoreForm.addEventListener("submit", saveScores );
+    scoreForm.addEventListener("submit", saveScores);
 }
 
 // ? SAVE SCORES TO LOCAL STORAGE
 function saveScores() {
+    var savedScores = quizTimerLength;
+    var savedNames = document.getElementById("user-name").value;
+    var scoreObj = JSON.stringify({ whovian: savedNames, score: savedScores });
 
-    var savedScores = localStorage.setItem("score", quizTimerLength);
-    var savedNames = loacalStorage.setItem("Whovian", document.getElementById("user-name").value);
-    
+    var hsList = localStorage.setItem("hsList", scoreObj);
 
 }
 
