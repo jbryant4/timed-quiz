@@ -28,9 +28,9 @@ main {
 }
 
 .q-area {
-    background-image: url(../images/tardis-console-series-5.jpg);
+    background-image: url(../images/tardis.gif);
     background-size: 100% 100%;
-    opacity: 0.5;
+    opacity: 0.8;
     width: 50%;
     display: flex;
     flex-wrap: wrap;
@@ -67,9 +67,9 @@ main {
 }
 
 .q-area h2 {
-    opacity: initial;
     width: 100%;
     font-size: 36px;
+    color: var(--white);
 
 }
 .timer {

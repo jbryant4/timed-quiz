@@ -137,16 +137,23 @@ function saveScores(event) {
         localStorage.setItem("hsList", JSON.stringify(checkList));
 
     }
+
+    document.getElementById("user-name").value = "";
+    playAgain();
 }
 
-
+function playAgain() {
+    var hspage = "file:///C:/Users/joebr/OneDrive/Desktop/projects/timed-quiz/highscore.html"
+    window.location.hspage;
+}
 // ? ANSWER FUNCTION
 function rightAnswer() {
 
     var userAnswer = this.getAttribute("data-answer")
 
     if (userAnswer === quizQuestion[currentQuestion].correct) {
-        // add sound
+        var fantastic = new Audio('fantastic.mp3');
+        fantastic.play();
     } else {
         quizTimerLength = quizTimerLength - 10;
         // add sound
@@ -184,5 +191,6 @@ function promptQuestions() {
 
 
 }
-// event starters 
+
+
 quizStart.addEventListener("click", promptQuestions);

@@ -5,24 +5,27 @@ var scoreList = document.createElement("ul");
 function loadHighScores() {
     var checkList = localStorage.getItem("hsList");
     if (checkList === null) {
-            console.log("empty");
+        console.log("empty");
     } else {
+
+
         var hsList = JSON.parse(checkList);
-
-
-        var savedHighScores = hsList.score;
-        var savedWhovian = hsList.whovian;
         var scoreArea = document.getElementById("highscores");
 
         var scoreListTitle = document.createElement("h2");
         scoreListTitle.textContent = "HIGHSCORES";
 
-        var scoreListItem = document.createElement("li");
-        scoreListItem.textContent = savedWhovian + savedHighScores;
+        for (i = 0; i < hsList.length; i++) {
+            var savedHighScores = hsList[i].score;
+            var savedWhovian = hsList[i].whovian;
 
-        scoreList.appendChild(scoreListItem);
-        scoreArea.appendChild(scoreListTitle);
-        scoreArea.appendChild(scoreList);
+            var scoreListItem = document.createElement("p");
+            scoreListItem.textContent = savedWhovian +" with a score of " + savedHighScores;
+
+            scoreList.appendChild(scoreListItem);
+            scoreArea.appendChild(scoreListTitle);
+            scoreArea.appendChild(scoreList);
+        }
     }
 }
 
