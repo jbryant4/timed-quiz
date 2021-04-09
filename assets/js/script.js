@@ -76,7 +76,7 @@ function quizTimer() {
                 document.getElementById("timer-area").style.color = "red";
             }
 
-            if (quizTimerLength === 0) {
+            if (quizTimerLength <= 0) {
                 gameOver = true;
                 endGame();
             }
@@ -91,6 +91,11 @@ function endGame() {
     tardis.pause();
     questionContainer.remove();
     clearInterval(timer);
+    
+    if (quizTimerLength < 0) {
+        quizTimerLength = 0;
+    };
+    
     // create form elements to submit score and give style 
     var scoreContainer = document.createElement("div");
     scoreContainer.setAttribute("id", "savescore-con");
