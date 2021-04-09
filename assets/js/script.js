@@ -143,8 +143,7 @@ function saveScores(event) {
 }
 
 function playAgain() {
-    var hspage = "https://jbryant4.github.io/timed-quiz/highscore.html"
-    window.location.hspage;
+    window.location.href = "https://jbryant4.github.io/timed-quiz/highscore.html"
 }
 // ? ANSWER FUNCTION
 function rightAnswer() {
