@@ -17,6 +17,7 @@ var currentQuestion = 0;
 var quizTimerLength = 100;
 var hsList = [];
 var gameOver = false;
+var tardis = new Audio('tardis.mp3');
 
 
 // ? Create question container and apply style to the elements 
@@ -86,6 +87,7 @@ function quizTimer() {
 
 // ? END GAME FUNCTION
 function endGame() {
+    tardis.pause();
     questionContainer.remove();
     clearInterval(timer);
     // create form elements to submit score and give style 
@@ -143,8 +145,7 @@ function saveScores(event) {
 }
 
 function playAgain() {
-    var hspage = "https://jbryant4.github.io/timed-quiz/highscore.html"
-    window.location.hspage;
+    window.location.href = "https://jbryant4.github.io/timed-quiz/highscore.html"
 }
 // ? ANSWER FUNCTION
 function rightAnswer() {
@@ -174,7 +175,10 @@ function rightAnswer() {
 function promptQuestions() {
     quizStart.remove();
     if (quizTimerLength === 100) {
-        quizTimer()
+        tardis.loop = true;
+        
+        tardis.play();
+        quizTimer();
     }
 
     questionEl.textContent = quizQuestion[currentQuestion].question;

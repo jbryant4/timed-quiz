@@ -13,6 +13,7 @@
 header {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 35px;
     
 }
 
@@ -31,25 +32,29 @@ main {
     background-image: url(../images/tardis.gif);
     background-size: 100% 100%;
     opacity: 0.8;
-    width: 50%;
+    width: 75%;
+    height: 75%;
     display: flex;
     flex-wrap: wrap;
     border: 5px solid var(--black);
     align-items: center;
-    padding: 25px;
+    margin: 20px 0 0 35px;
+
 }
 
 .answer-button {
-    width: 100%;
     background-color: var(--white);
     color: var(--black);
     outline: none;
     border: none;
-    margin-bottom: 15px;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 5px #999;
     border-radius: 15px;
     font-size: 24px;
     cursor: pointer;
+    margin: 20px auto;
+    font-size: 25px;
+
+
 }
 
 .answer-button:hover {
@@ -64,12 +69,16 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: auto
 }
 
 .q-area h2 {
     width: 100%;
     font-size: 36px;
     color: var(--white);
+    text-align: center;
 
 }
 .timer {
@@ -88,5 +97,34 @@ body {
     background-image: url("../images/quiz-bg.jpg");
     background-size: cover;
     background-attachment: fixed;
+    
+}
+
+#quiz-area {
+    height: 800px;
+}
+
+
+/* high score css */
+
+#hs-main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hs-button {
+    height: 35px;
+}
+
+#highscores {
+    width: 100%;
+}
+
+.hs-element {
+    width: 40%;
+}
+
+.hs-hs{
+    width: 10%;
     
 }
