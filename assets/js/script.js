@@ -95,7 +95,7 @@ function endGame() {
     if (quizTimerLength < 0) {
         quizTimerLength = 0;
     };
-    
+
     // create form elements to submit score and give style 
     var scoreContainer = document.createElement("div");
     scoreContainer.setAttribute("id", "savescore-con");
@@ -173,6 +173,7 @@ function rightAnswer() {
         // add sound
         var darlek = new Audio('exterminate.mp3');
         darlek.play();
+        darlek.playbackRate = 2;
     }
     if (currentQuestion === quizQuestion.length - 1) {
         gameOver = true;
