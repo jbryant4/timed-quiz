@@ -143,7 +143,7 @@ function saveScores(event) {
 }
 
 function playAgain() {
-    var hspage = "file:///C:/Users/joebr/OneDrive/Desktop/projects/timed-quiz/highscore.html"
+    var hspage = "https://jbryant4.github.io/timed-quiz/highscore.html"
     window.location.hspage;
 }
 // ? ANSWER FUNCTION
