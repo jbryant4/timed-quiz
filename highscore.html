@@ -9,10 +9,11 @@
 </head>
 <body onload = "loadHighScores()">
 
-    <main>
-        <div id="highscores"> Hi Scores here </div>
-        <a href="./index.html">Back to Quiz</a>
-        <button id="delete-scores">Delete HighScores</button>        
+    <main id="hs-main">
+        <div class="hs-hs"><p>H<br>I<br>G<br>H<br>S<br>C<br>O<br>R<br>E<br>S<br></p></div>
+        <div class="hs-element" id="highscores"></div>
+        <a class = "hs-button hs-element"  href="./index.html">Replay the Quiz</a>
+        <button class = "hs-button hs-element" id="delete-scores">Delete HighScores</button>        
         
     </main>
     <script src="./assets/js/highscore.js">  </script>
