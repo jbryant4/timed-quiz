@@ -1,5 +1,6 @@
 
-var scoreList = document.createElement("ul");
+var scoreList = document.getElementById("highscores");
+
 
 // ? LOAD HIGHSCORES ON HIGHSCORE PAGE
 function loadHighScores() {
@@ -16,11 +17,10 @@ function loadHighScores() {
             var savedHighScores = hsList[i].score;
             var savedWhovian = hsList[i].whovian;
 
-            var scoreListItem = document.createElement("li");
+            var scoreListItem = document.createElement("p");
             scoreListItem.textContent = savedWhovian +" with a score of " + savedHighScores;
 
             scoreList.appendChild(scoreListItem);
-            scoreArea.appendChild(scoreList);
         }
     }
 }
@@ -35,8 +35,8 @@ function deleteHighScores() {
     var confirm = window.confirm("Are you sure?");
 
     if (confirm) {
-        scoreList.remove();
         localStorage.clear();
+        location.reload();
     } else {
         location.reload();
     }

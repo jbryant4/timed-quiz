@@ -63,7 +63,14 @@ main {
     border: 3px solid var(--black);
 }
 
+#quiz-start {
+    color: var(--black);
+    background-color: var(--white);
+    border: 8px solid var(--blue);
+    font-size: 25px;
+    padding: 10px;
 
+}
 
 #button-list {
     display: flex;
@@ -104,20 +111,64 @@ body {
     height: 800px;
 }
 
+/* Save Score Area style */
 
+#savescore-con {
+    height: 150px;
+    text-align: center;
+}
+#savescore-title {
+    font-size: 35px;
+}
+
+#user-label , #user-name , #savescore-btn {
+    font-size: 25px;
+}
+
+#user-label {
+    font-weight: bolder;
+    color: var(--white);
+}
+
+#savegif {
+    margin-top: 25px;
+    height: 320px;
+    width: 490px;
+}
+
+#savescore-btn {
+    color: var(--white);
+    background-color: var(--blue);
+    border-radius: 15px;
+}
 /* high score css */
 
 #hs-main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .hs-button {
-    height: 35px;
+    padding: 10px;
+    color: var(--white);
+    background-color: var(--blue);
+    border: 3px solid var(--black);
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.hs-button:hover {
+    color: var(--blue);
+    background-color:var(--white);
+    font-weight: bolder;
 }
 
 #highscores {
-    width: 100%;
+    width: 80%;
 }
 
 .hs-element {
@@ -127,4 +178,10 @@ body {
 .hs-hs{
     width: 10%;
     
+}
+
+p {
+font-weight: bolder;
+font-size: 25px;
+text-align: center;
 }
