@@ -20,6 +20,7 @@ var gameOver = false;
 var tardis = new Audio('tardis.mp3');
 
 
+
 // ? Create question container and apply style to the elements 
 // create question container
 var questionContainer = document.createElement("div");
@@ -92,19 +93,25 @@ function endGame() {
     clearInterval(timer);
     // create form elements to submit score and give style 
     var scoreContainer = document.createElement("div");
+    scoreContainer.setAttribute("id", "savescore-con");
     var scoreTitle = document.createElement("h2");
-    scoreTitle.textContent = "Your score is "
+    scoreTitle.textContent = "Your score is ";
+    scoreTitle.setAttribute("id", "savescore-title")
     var score = document.createElement("span");
     score.textContent = quizTimerLength;
     var scoreForm = document.createElement("form");
     var userLabel = document.createElement("label");
-    userLabel.textContent = "Your Name"
+    userLabel.textContent = "Whovian Name:  ";
+    userLabel.setAttribute("id", "user-label");
     var userName = document.createElement("input");
     userName.setAttribute("type", "text");
     userName.setAttribute("id", "user-name")
     var saveButton = document.createElement("input");
     saveButton.setAttribute("type", "submit")
     saveButton.setAttribute("id", "savescore-btn")
+    var saveGif = document.createElement("img");
+    saveGif.setAttribute("src","./assets/images/thumbsup.gif")
+    saveGif.setAttribute("id", "savegif")
     // prompt score div 
     scoreForm.appendChild(userLabel);
     scoreForm.appendChild(userName);
@@ -112,6 +119,7 @@ function endGame() {
     scoreTitle.appendChild(score);
     scoreContainer.appendChild(scoreTitle);
     scoreContainer.appendChild(scoreForm);
+    scoreContainer.appendChild(saveGif);
     // put on screen
     quizArea.appendChild(scoreContainer);
 
@@ -176,8 +184,9 @@ function promptQuestions() {
     quizStart.remove();
     if (quizTimerLength === 100) {
         tardis.loop = true;
-        
         tardis.play();
+        tardis.volume = 0.2;
+
         quizTimer();
     }
 
