@@ -21,7 +21,7 @@ JAVASCRIPT
 https://jbryant4.github.io/timed-quiz/
 
 ## Functionality 
-  ###slight warning that there is sound in this quiz 
+  !!!SOUND WARNING!!!! 
 
 The theme of the quiz is my favorite tv show called Dr. Who. The quiz is ten questions long and is prompted by this button.
 ![image](https://user-images.githubusercontent.com/78622927/114338768-9f531d00-9b08-11eb-8657-15f4d94fd6ee.png)
@@ -43,5 +43,6 @@ The user can then either go back to the quiz or delete the highscores from the p
 
 ![image](https://user-images.githubusercontent.com/78622927/114338908-e50fe580-9b08-11eb-96a3-dd330cbcff35.png)
 
-####Developer
+
+###Developer
 Joseph Bryant
